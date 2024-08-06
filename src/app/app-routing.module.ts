@@ -5,7 +5,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 
 const routes: Routes = [
   {
-    path: 'welcome',
+    path: 'start',
     component: StartPageComponent
   },
   {
