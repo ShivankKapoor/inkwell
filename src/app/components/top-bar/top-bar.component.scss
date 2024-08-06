@@ -1,0 +1,7 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+    height: 64px; /* Standard height for Angular Material toolbar */
+    line-height: 64px; /* Ensures the content is centered */
+  }
