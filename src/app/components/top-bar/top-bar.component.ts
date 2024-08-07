@@ -21,8 +21,10 @@ export class TopBarComponent implements OnInit {
       this.showButtons = this.currentUrl !== '/start';
     });
 
-    // Initialize URL and button visibility
-    this.currentUrl = this.router.url;
-    this.showButtons = this.currentUrl !== '/start';
+    // Initialize URL and button visibility after subscribing to router events
+    setTimeout(() => {
+      this.currentUrl = this.router.url;
+      this.showButtons = this.currentUrl !== '/start';
+    });
   }
 }
