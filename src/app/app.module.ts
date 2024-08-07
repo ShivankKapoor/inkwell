@@ -10,13 +10,15 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { MatIconModule } from '@angular/material/icon';
+import { WriterPageComponent } from './pages/writer-page/writer-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StartPageComponent,
     HomePageComponent,
-    TopBarComponent
+    TopBarComponent,
+    WriterPageComponent
   ],
   imports: [
     BrowserModule,
