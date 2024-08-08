@@ -1,0 +1,27 @@
+<mat-card class="welcome-card">
+  <mat-card-title>
+    Welcome to Inkwell!
+  </mat-card-title>
+  <mat-card-content>
+    <img src="assets/logo.png" alt="Logo" class="logo">
+    <div class="button-div">
+      <button mat-flat-button color="primary" class="new-journal-button" (click)="goToWriter()">
+        <mat-icon aria-hidden="false" aria-label="New Journal Icon" fontIcon="add"></mat-icon>
+        New Journal
+      </button>
+      <button mat-flat-button color="primary" class="import-journal-button" (click)="fileInput.click()">
+        <mat-icon aria-hidden="false" aria-label="Import Journal Icon" fontIcon="publish"></mat-icon>
+        Import Journal
+      </button>
+      <input #fileInput type="file" hidden (change)="onFileSelected($event)">
+    </div>
+    <div *ngIf="selectedFileName" class="file-info">
+      Selected File: {{ selectedFileName }}
+    </div>
+    <div *ngIf="selectedFileName" class="submit-div">
+      <button mat-flat-button color="accent" class="submit-button" (click)="submitFile()">
+        Submit
+      </button>
+    </div>
+  </mat-card-content>
+</mat-card>
