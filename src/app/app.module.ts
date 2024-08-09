@@ -16,6 +16,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EntryPickerComponent } from './components/entry-picker/entry-picker.component';
+import { TextEditorComponent } from './components/text-editor/text-editor.component';
 
 
 
@@ -26,7 +27,8 @@ import { EntryPickerComponent } from './components/entry-picker/entry-picker.com
     HomePageComponent,
     TopBarComponent,
     WriterPageComponent,
-    EntryPickerComponent
+    EntryPickerComponent,
+    TextEditorComponent
   ],
   imports: [
     BrowserModule,
