@@ -17,6 +17,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EntryPickerComponent } from './components/entry-picker/entry-picker.component';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -42,7 +43,7 @@ import { TextEditorComponent } from './components/text-editor/text-editor.compon
     MatFormFieldModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatInputModule,
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync()
