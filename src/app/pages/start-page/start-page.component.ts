@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { RouterService } from '../../services/router.service';
 
 @Component({
   selector: 'app-start-page',
@@ -9,18 +10,13 @@ import { Router } from '@angular/router';
 export class StartPageComponent {
   selectedFileName: string | null = null;
 
-  constructor(private router: Router){}
+  constructor(public route: RouterService){}
 
   onFileSelected(event: any): void {
     const file: File = event.target.files[0];
     if (file) {
       this.selectedFileName = file.name;
     }
-  }
-
-  goToWriter(){
-    console.log("Navigate to writer");
-    this.router.navigateByUrl("/writer");
   }
 
   submitFile(): void {

@@ -1,8 +1,8 @@
 <div class="home-container">
-    <button mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Writer icon"
+    <button (click)="route.goToWriter()" mat-raised-button color="primary"><mat-icon aria-hidden="false" aria-label="Writer icon"
             fontIcon="edit"></mat-icon>Writer</button>
     <button mat-raised-button color="accent"><mat-icon aria-hidden="false" aria-label="Reader icon"
             fontIcon="auto_stories"></mat-icon>Reader</button>
-    <button mat-raised-button color="warn"><mat-icon aria-hidden="false" aria-label="Exit icon"
+    <button (click)="route.goToStart()" mat-raised-button color="warn"><mat-icon aria-hidden="false" aria-label="Exit icon"
             fontIcon="close"></mat-icon>Exit</button>
 </div>

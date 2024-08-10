@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { RouterService } from '../../services/router.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -11,7 +12,7 @@ export class TopBarComponent implements OnInit {
   currentUrl: string | undefined;
   showButtons: boolean = true;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, public route: RouterService) {}
 
   ngOnInit(): void {
     this.router.events.pipe(

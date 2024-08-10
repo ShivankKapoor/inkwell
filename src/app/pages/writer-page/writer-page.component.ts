@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterService } from '../../services/router.service';
 
 @Component({
   selector: 'app-writer-page',
@@ -6,6 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./writer-page.component.scss']
 })
 export class WriterPageComponent {
+  constructor(public route:RouterService){}
+
   selectedDate: Date | undefined = undefined;
   outputString:string | undefined;
   onDateSelected(date: Date | undefined): void {
