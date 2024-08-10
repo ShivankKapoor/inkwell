@@ -1,6 +1,10 @@
 <mat-toolbar color="secondary">
-  <span (click)="route.goToHome()"><img src="assets/logo.png" alt="Logo" class="logo"></span>
-  <div (click)="route.goToHome()">
+  <span *ngIf="!showButtons"><img src="assets/logo.png" alt="Logo" class="logo"></span>
+  <div *ngIf="!showButtons">
+    <h1>Inkwell</h1>
+  </div>
+  <span *ngIf="showButtons" (click)="route.goToHome()"><img src="assets/logo.png" alt="Logo" class="logo"></span>
+  <div *ngIf="showButtons" (click)="route.goToHome()">
     <h1>Inkwell</h1>
   </div>
   <span class="spacer"></span>
