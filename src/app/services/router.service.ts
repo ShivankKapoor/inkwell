@@ -9,7 +9,7 @@ export class RouterService {
   constructor(private route: Router) { }
 
   public goToHome() {
-    this.route.navigateByUrl("/home")
+    this.route.navigateByUrl("/")
   }
 
   public goToWriter() {
