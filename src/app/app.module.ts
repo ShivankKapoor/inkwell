@@ -11,6 +11,15 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { WriterPageComponent } from './pages/writer-page/writer-page.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatNativeDateModule } from '@angular/material/core';
+import { EntryPickerComponent } from './components/entry-picker/entry-picker.component';
+import { TextEditorComponent } from './components/text-editor/text-editor.component';
+import { FormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -18,7 +27,9 @@ import { WriterPageComponent } from './pages/writer-page/writer-page.component';
     StartPageComponent,
     HomePageComponent,
     TopBarComponent,
-    WriterPageComponent
+    WriterPageComponent,
+    EntryPickerComponent,
+    TextEditorComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +37,13 @@ import { WriterPageComponent } from './pages/writer-page/writer-page.component';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    FormsModule,
   ],
   providers: [
     provideAnimationsAsync()

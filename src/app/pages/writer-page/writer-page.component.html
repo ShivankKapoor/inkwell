@@ -1,1 +1,18 @@
-<p>writer-page works!</p>
+<div class="go-back-button">
+    <button mat-mini-fab>
+        <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="arrow_back"></mat-icon>
+    </button>
+</div>
+
+<div class="picker-container">
+    <div class="picker">
+        <app-entry-picker (dateSelected)="onDateSelected($event)"></app-entry-picker>
+    </div>
+    <div class="entry-title">
+        <h2>{{ outputString }}</h2>
+    </div>
+</div>
+
+<div class="text-editor">
+    <app-text-editor></app-text-editor>
+</div>
