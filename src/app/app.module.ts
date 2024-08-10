@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { EntryPickerComponent } from './components/entry-picker/entry-picker.component';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
 import { FormsModule } from '@angular/forms';
+import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
 
 
 
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     TopBarComponent,
     WriterPageComponent,
     EntryPickerComponent,
-    TextEditorComponent
+    TextEditorComponent,
+    ReaderPageComponent
   ],
   imports: [
     BrowserModule,

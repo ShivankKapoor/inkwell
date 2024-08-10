@@ -19,5 +19,9 @@ export class RouterService {
   public goToStart() {
     this.route.navigateByUrl('/start');
   }
+
+  public goToReader(){
+    this.route.navigateByUrl('/reader')
+  }
 }
 

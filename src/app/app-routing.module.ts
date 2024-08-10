@@ -4,6 +4,7 @@ import { StartPageComponent } from './pages/start-page/start-page.component';
 import { HomePageComponent } from './pages/home/home-page.component';
 import { fileImportGuard } from './guard/file-imported.guard';
 import { WriterPageComponent } from './pages/writer-page/writer-page.component';
+import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
 
 const routes: Routes = [
   {
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'writer',
     component: WriterPageComponent,
+  },
+  {
+    path:'reader',
+    component:ReaderPageComponent,
   },
   {
     path: '**',
