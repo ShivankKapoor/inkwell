@@ -7,23 +7,29 @@ import { RouterService } from '../../services/router.service';
   styleUrls: ['./writer-page.component.scss']
 })
 export class WriterPageComponent {
-  constructor(public route:RouterService){}
+  constructor(public route: RouterService) { }
+
+  isEnabled: boolean = false;
 
   selectedDate: Date | undefined = undefined;
-  outputString:string | undefined;
+  outputString: string | undefined;
   onDateSelected(date: Date | undefined): void {
     this.selectedDate = date;
 
     if (this.selectedDate) {
+      this.isEnabled = true;
       const dayNumber = this.selectedDate.getDay();
       const dayString = this.dayNumToDay(dayNumber);
-      this.outputString = 
-        dayString + ", " + 
+      this.outputString =
+        dayString + ", " +
         (this.selectedDate.getMonth() + 1) + "/" +
-        this.selectedDate.getDate() + "/" + 
+        this.selectedDate.getDate() + "/" +
         this.selectedDate.getFullYear();
 
       console.log(this.outputString);
+    } else {
+      this.outputString = "";
+      this.isEnabled = false;
     }
   }
 
@@ -55,6 +61,6 @@ export class WriterPageComponent {
       default:
         dayString = 'Unknown';
     }
-    return dayString; 
+    return dayString;
   }
 }
