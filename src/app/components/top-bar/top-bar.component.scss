@@ -11,8 +11,13 @@ h1 {
   height: 40px;
   margin-right: 16px;
   margin-top: 20px;
+  cursor:pointer !important;
 }
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.clickable {
+  cursor:pointer !important;
 }
