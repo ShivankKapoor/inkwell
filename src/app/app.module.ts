@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { StartPageComponent } from './pages/start-page/start-page.component';
-import { HomePageComponent } from './pages/home-page/home-page.component';
+import { HomePageComponent } from './pages/home/home-page.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { EntryPickerComponent } from './components/entry-picker/entry-picker.component';
 import { TextEditorComponent } from './components/text-editor/text-editor.component';
 import { FormsModule } from '@angular/forms';
+import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
 
 
 
@@ -29,7 +30,8 @@ import { FormsModule } from '@angular/forms';
     TopBarComponent,
     WriterPageComponent,
     EntryPickerComponent,
-    TextEditorComponent
+    TextEditorComponent,
+    ReaderPageComponent
   ],
   imports: [
     BrowserModule,

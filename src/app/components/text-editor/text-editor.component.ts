@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-text-editor',
@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./text-editor.component.scss']
 })
 export class TextEditorComponent {
+  @Input() enabled!:boolean; 
+  
   textContent: string = '';
 
   constructor() {}

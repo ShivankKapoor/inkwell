@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouterService } from '../../services/router/router.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './home-page.component.scss'
 })
 export class HomePageComponent {
-
+  constructor(public route:RouterService) { }
 }

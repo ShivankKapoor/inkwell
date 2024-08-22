@@ -1,11 +1,17 @@
 <mat-toolbar color="secondary">
-  <span><img src="assets/logo.png" alt="Logo" class="logo"></span>
-  <h1>Inkwell</h1>
+  <span *ngIf="!showButtons"><img src="assets/logo.png" alt="Logo" class="logo"></span>
+  <div *ngIf="!showButtons">
+    <h1>Inkwell</h1>
+  </div>
+  <span *ngIf="showButtons" (click)="route.goToHome()"><img src="assets/logo.png" alt="Logo" class="logo-clickable"></span>
+  <div *ngIf="showButtons" (click)="route.goToHome()">
+    <h1 class="clickable">Inkwell</h1>
+  </div>
   <span class="spacer"></span>
   <ng-container *ngIf="showButtons">
-    <button mat-button><mat-icon>home</mat-icon> Home</button>
-    <button mat-button><mat-icon>edit</mat-icon> Writer</button>
-    <button mat-button><mat-icon>auto_stories</mat-icon> Reader</button>
-    <button mat-button><mat-icon>close</mat-icon> Exit</button>
+    <button mat-button (click)="route.goToHome()"><mat-icon>home</mat-icon> Home</button>
+    <button mat-button (click)="route.goToWriter()"><mat-icon>edit</mat-icon> Writer</button>
+    <button mat-button (click)="route.goToReader()"><mat-icon>auto_stories</mat-icon> Reader</button>
+    <button mat-button (click)="route.goToStart()"><mat-icon>close</mat-icon> Exit</button>
   </ng-container>
 </mat-toolbar>
