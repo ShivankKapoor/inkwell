@@ -14,15 +14,17 @@ const routes: Routes = [
   {
     path: '',
     component: HomePageComponent,
-    //canActivate: [fileImportGuard]
+    canActivate: [fileImportGuard]
   },
   {
     path: 'writer',
     component: WriterPageComponent,
+    canActivate: [fileImportGuard]
   },
   {
     path:'reader',
     component:ReaderPageComponent,
+    canActivate: [fileImportGuard]
   },
   {
     path: '**',

@@ -28,4 +28,9 @@ export class TopBarComponent implements OnInit {
       this.showButtons = this.currentUrl !== '/start';
     });
   }
+
+  exitFile(){
+    this.route.goToStart()
+    localStorage.removeItem('hasFile');
+  }
 }
