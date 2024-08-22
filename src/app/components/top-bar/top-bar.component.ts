@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { RouterService } from '../../services/router.service';
+import { RouterService } from '../../services/router/router.service';
 
 @Component({
   selector: 'app-top-bar',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterService } from '../../services/router.service';
+import { RouterService } from '../../services/router/router.service';
 
 @Component({
   selector: 'app-writer-page',
