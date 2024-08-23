@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterService } from '../../services/router/router.service';
+import { FileService } from '../../services/file-service/file.service';
 
 @Component({
   selector: 'app-start-page',
@@ -10,7 +11,7 @@ import { RouterService } from '../../services/router/router.service';
 export class StartPageComponent {
   selectedFileName: string | null = null;
 
-  constructor(public route: RouterService){}
+  constructor(public route: RouterService, private files:FileService){}
 
   ngOnInit(){
     localStorage.removeItem('hasFile');
@@ -25,8 +26,9 @@ export class StartPageComponent {
   }
 
   newJournal(){
-    localStorage.setItem('hasFile','true');
-    this.route.goToWriter();
+    this.files.createAndDownloadFile();
+    //localStorage.setItem('hasFile','true');
+    //this.route.goToWriter();
   }
 
 
