@@ -14,5 +14,15 @@
 </div>
 
 <div class="text-editor">
-    <app-text-editor [enabled]="isEnabled"></app-text-editor>
+    <div class="text-editor-container">
+        <mat-form-field appearance="outline" class="editor-field">
+            <textarea matInput [(ngModel)]="textContent" placeholder="Enter your text here" rows="10"
+                [disabled]="!isEnabled"></textarea>
+        </mat-form-field>
+    </div>
+</div>
+
+<div class="controls">
+    <button mat-raised-button color="primary" (click)="clearText()" [disabled]="!isEnabled">Clear Text</button>
+    <button mat-raised-button color="primary" (click)="saveEntry()" [disabled]="!isEnabled">Save Text</button>
 </div>

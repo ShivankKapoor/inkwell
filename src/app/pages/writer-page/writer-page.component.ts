@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterService } from '../../services/router/router.service';
+import { FileService } from '../../services/file-service/file.service';
 
 @Component({
   selector: 'app-writer-page',
@@ -7,15 +8,20 @@ import { RouterService } from '../../services/router/router.service';
   styleUrls: ['./writer-page.component.scss']
 })
 export class WriterPageComponent {
-  constructor(public route: RouterService) { }
 
-  isEnabled: boolean = false;
-
+  textContent: string = '';
   selectedDate: Date | undefined = undefined;
   outputString: string | undefined;
+  isEnabled: boolean = false;
+
+  constructor(public route: RouterService, private fileService: FileService) { }
+
+  clearText() {
+    this.textContent = '';
+  }
+
   onDateSelected(date: Date | undefined): void {
     this.selectedDate = date;
-
     if (this.selectedDate) {
       this.isEnabled = true;
       const dayNumber = this.selectedDate.getDay();
@@ -25,7 +31,6 @@ export class WriterPageComponent {
         (this.selectedDate.getMonth() + 1) + "/" +
         this.selectedDate.getDate() + "/" +
         this.selectedDate.getFullYear();
-
       console.log(this.outputString);
     } else {
       this.outputString = "";
@@ -35,7 +40,6 @@ export class WriterPageComponent {
 
   private dayNumToDay(num: number): string {
     let dayString: string;
-
     switch (num) {
       case 0:
         dayString = 'Sunday';
@@ -62,5 +66,13 @@ export class WriterPageComponent {
         dayString = 'Unknown';
     }
     return dayString;
+  }
+
+  saveEntry(): void {
+    if (this.selectedDate && this.textContent) {
+      this.fileService.writeEntry(this.selectedDate.toDateString(), this.textContent);
+    }
+
+    console.log(this.fileService.getFileContent());
   }
 }
