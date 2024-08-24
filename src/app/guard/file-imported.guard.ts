@@ -13,7 +13,7 @@ export class fileImportGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (false) {
+    if (localStorage.getItem('hasFile')) {
       return true;
     } else {
       this.router.navigate(['/start']);

@@ -16,7 +16,6 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
 import { EntryPickerComponent } from './components/entry-picker/entry-picker.component';
-import { TextEditorComponent } from './components/text-editor/text-editor.component';
 import { FormsModule } from '@angular/forms';
 import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
 
@@ -30,7 +29,6 @@ import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
     TopBarComponent,
     WriterPageComponent,
     EntryPickerComponent,
-    TextEditorComponent,
     ReaderPageComponent
   ],
   imports: [
