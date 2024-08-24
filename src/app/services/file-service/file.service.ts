@@ -11,7 +11,7 @@ export class FileService {
   constructor() { }
 
   createAndDownloadFile(fileName: string = 'Journal.txt'): void {
-    const blob = new Blob([''], { type: 'text/plain' });
+    const blob = new Blob(['Journal file for Inkwell\n'], { type: 'text/plain' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
     link.download = fileName;
