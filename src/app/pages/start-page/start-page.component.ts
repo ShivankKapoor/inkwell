@@ -22,6 +22,7 @@ export class StartPageComponent {
     if (file) {
       this.selectedFileName = file.name;
       localStorage.setItem('hasFile','true');
+      this.files.readJournal(file);
     }
   }
 
