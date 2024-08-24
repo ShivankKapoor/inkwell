@@ -31,7 +31,8 @@ export class WriterPageComponent {
         (this.selectedDate.getMonth() + 1) + "/" +
         this.selectedDate.getDate() + "/" +
         this.selectedDate.getFullYear();
-      console.log(this.outputString);
+      console.log(this.selectedDate.toString());
+      console.log(this.fileService.getEntry(this.selectedDate.toDateString()));
     } else {
       this.outputString = "";
       this.isEnabled = false;
@@ -73,6 +74,7 @@ export class WriterPageComponent {
       this.fileService.writeEntry(this.selectedDate.toDateString(), this.textContent);
     }
 
+    console.log(this.fileService.getEntriesMap());
     console.log(this.fileService.getFileContent());
   }
 }
