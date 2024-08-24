@@ -9,7 +9,7 @@ import { FileService } from '../../services/file-service/file.service';
 })
 export class WriterPageComponent {
 
-  textContent: string = '';
+  textContent: string|undefined = '';
   selectedDate: Date | undefined = undefined;
   outputString: string | undefined;
   isEnabled: boolean = false;
@@ -31,6 +31,7 @@ export class WriterPageComponent {
         (this.selectedDate.getMonth() + 1) + "/" +
         this.selectedDate.getDate() + "/" +
         this.selectedDate.getFullYear();
+      this.textContent=this.fileService.getEntry(this.selectedDate.toDateString());
       console.log(this.selectedDate.toString());
       console.log(this.fileService.getEntry(this.selectedDate.toDateString()));
     } else {
