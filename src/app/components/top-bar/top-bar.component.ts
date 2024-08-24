@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { RouterService } from '../../services/router/router.service';
+import { FileService } from '../../services/file-service/file.service';
 
 @Component({
   selector: 'app-top-bar',
@@ -12,7 +13,7 @@ export class TopBarComponent implements OnInit {
   currentUrl: string | undefined;
   showButtons: boolean = true;
 
-  constructor(private router: Router, public route: RouterService) {}
+  constructor(private router: Router, public route: RouterService, private file:FileService) {}
 
   ngOnInit(): void {
     this.router.events.pipe(
@@ -30,6 +31,8 @@ export class TopBarComponent implements OnInit {
   }
 
   exitFile(){
+    this.file.downloadFile();
+    this.file.clearContent();
     this.route.goToStart()
     localStorage.removeItem('hasFile');
   }

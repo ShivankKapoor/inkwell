@@ -18,6 +18,15 @@ export class FileService {
     URL.revokeObjectURL(link.href);
   }
 
+  downloadFile(){
+    const blob = new Blob([this.getFileContent()], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = "Journal.txt";
+    link.click();
+    URL.revokeObjectURL(link.href);
+  }
+
   readJournal(file: File): Promise<string> {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
