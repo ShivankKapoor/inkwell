@@ -18,6 +18,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { EntryPickerComponent } from './components/entry-picker/entry-picker.component';
 import { FormsModule } from '@angular/forms';
 import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
+import { ReaderPickerComponent } from './components/reader-picker/reader-picker.component';
 
 
 
@@ -29,7 +30,8 @@ import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
     TopBarComponent,
     WriterPageComponent,
     EntryPickerComponent,
-    ReaderPageComponent
+    ReaderPageComponent,
+    ReaderPickerComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,7 @@ import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
+    MatNativeDateModule
   ],
   providers: [
     provideAnimationsAsync()
