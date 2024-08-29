@@ -42,17 +42,18 @@ export class FileService {
   }
 
   private parseEntries(): void {
-    const entryPattern = /##(\d{4}-\d{2}-\d{2})##\s*([\s\S]*?)(?=##|$)/g;
+    const entryPattern = /##(\w{3} \w{3} \d{2} \d{4})##\s*([\s\S]*?)(?=##|$)/g;
     let match;
-
+  
     this.entriesMap.clear(); // Clear existing entries in the hash map before adding new ones
-
+  
     while ((match = entryPattern.exec(this.fileContent)) !== null) {
       const date = match[1]; // The date portion of the entry
       const entry = match[2].trim(); // The entry text, trimmed of excess whitespace
       this.entriesMap.set(date, entry); // Store the entry in the hash map
     }
   }
+  
 
   getFileContent(): string {
     return this.fileContent;
