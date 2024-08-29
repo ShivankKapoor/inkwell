@@ -10,7 +10,7 @@ export class ReaderPickerComponent {
   @Output() dateSelected: EventEmitter<Date | undefined> = new EventEmitter<Date | undefined>();
   @Input() availableDates: Date[] = [];
   selectedDate: Date | null = null;
-  
+
   dateFilter = (date: Date | null): boolean => {
     const dateString = date?.toISOString().split('T')[0]; // Format date to YYYY-MM-DD
     return this.availableDates.some(availableDate =>
@@ -20,6 +20,16 @@ export class ReaderPickerComponent {
 
   onDateChange(event: any): void {
     this.selectedDate = event.value;
-    this.dateSelected.emit(this.selectedDate ?? undefined); // Emit undefined if selectedDate is null
+    
+    if (this.selectedDate && !this.dateFilter(this.selectedDate)) {
+      this.clearDatePicker();
+    } else {
+      this.dateSelected.emit(this.selectedDate ?? undefined); // Emit undefined if selectedDate is null
+    }
+  }
+
+  clearDatePicker(): void {
+    this.selectedDate = null;
+    this.dateSelected.emit(undefined);
   }
 }
