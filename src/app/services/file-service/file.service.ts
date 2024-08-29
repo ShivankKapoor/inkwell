@@ -21,12 +21,14 @@ export class FileService {
   }
 
   downloadFile(): void {
-    const blob = new Blob([this.getFileContent()], { type: 'text/plain' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = "Journal.txt";
-    link.click();
-    URL.revokeObjectURL(link.href);
+    if (constants.downloadOnExit) {
+      const blob = new Blob([this.getFileContent()], { type: 'text/plain' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = "Journal.txt";
+      link.click();
+      URL.revokeObjectURL(link.href);
+    }
   }
 
   readJournal(file: File): Promise<string> {
@@ -73,17 +75,6 @@ export class FileService {
 
     // Update the hash map with the new entry
     this.entriesMap.set(date, entry);
-  }
-
-  exportUpdatedJournal(fileName: string = 'Journal.txt'): void {
-    if (constants.downloadOnExit) {
-      const blob = new Blob([this.fileContent], { type: 'text/plain' });
-      const link = document.createElement('a');
-      link.href = URL.createObjectURL(blob);
-      link.download = fileName;
-      link.click();
-      URL.revokeObjectURL(link.href);
-    }
   }
 
   clearContent(): void {
