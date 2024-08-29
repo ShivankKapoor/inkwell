@@ -12,11 +12,13 @@ export class ReaderPageComponent {
   selectedDate: Date | undefined = undefined;
   isEnabled: boolean = false;
   textContent: string | undefined = '';
+  availableDates:Date[] | undefined;
 
   constructor(public route: RouterService, private fileService: FileService) { }
 
   ngOnInit() {
-    console.log(this.fileService.getEntriesMap().keys());
+    this.availableDates=this.fileService.getDates();
+    console.log(this.availableDates);
   }
 
 

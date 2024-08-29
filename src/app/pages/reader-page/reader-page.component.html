@@ -5,7 +5,7 @@
 </div>
 <div class="picker-container">
     <div class="picker">
-        <app-reader-picker (dateSelected)="onDateSelected($event)"></app-reader-picker>
+        <app-reader-picker [availableDates]="this.availableDates || []" (dateSelected)="onDateSelected($event)"></app-reader-picker>
     </div>
     <div class="entry-title">
         <h2>{{ outputString }}</h2>
