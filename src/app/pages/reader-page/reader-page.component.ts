@@ -8,7 +8,7 @@ import { FileService } from '../../services/file-service/file.service';
   styleUrl: './reader-page.component.scss'
 })
 export class ReaderPageComponent {
-  outputString: string | undefined = "AHHHHH";
+  outputString: string | undefined = "";
   selectedDate: Date | undefined = undefined;
   isEnabled: boolean = false;
   textContent: string | undefined = '';

@@ -5,9 +5,19 @@
 </div>
 <div class="picker-container">
     <div class="picker">
-        <app-reader-picker [availableDates]="this.availableDates || []" (dateSelected)="onDateSelected($event)"></app-reader-picker>
+        <app-reader-picker [availableDates]="this.availableDates || []"
+            (dateSelected)="onDateSelected($event)"></app-reader-picker>
     </div>
     <div class="entry-title">
-        <h2>{{ outputString }}</h2>
+        <h2></h2>
     </div>
+</div>
+
+<div class="reader-container">
+    <mat-card appearance="outlined">
+        <mat-card-title class="reader-header">
+            {{ outputString }}
+        </mat-card-title>
+        <mat-card-content><h3>{{textContent}}</h3></mat-card-content>
+    </mat-card>
 </div>
