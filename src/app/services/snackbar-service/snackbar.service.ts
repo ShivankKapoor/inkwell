@@ -11,6 +11,6 @@ export class SnackbarService {
   private snackBar = inject(MatSnackBar);
 
   openSnackBar(message: string, action: string) {
-    this.snackBar.open(message, action);
+    this.snackBar.open(message, action, {duration: 5000});
   }
 }
