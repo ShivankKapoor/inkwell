@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { constants } from '../../environments/constants.env';
+import { ChangeService } from '../change-service/change.service';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ export class FileService {
   private fileContent: string = ''; // Stores the entire content of the journal
   private entriesMap: Map<string, string> = new Map(); // Stores each entry with its corresponding date as the key
 
-  constructor() { }
+  constructor(private change:ChangeService) { }
 
   createAndDownloadFile(fileName: string = 'Journal.txt'): void {
     const blob = new Blob(['Journal file for Inkwell\n'], { type: 'text/plain' });
@@ -21,6 +22,7 @@ export class FileService {
   }
 
   downloadFile(): void {
+    this.change.setChangeStatus(false);
     if (constants.downloadOnExit) {
       const blob = new Blob([this.getFileContent()], { type: 'text/plain' });
       const link = document.createElement('a');
