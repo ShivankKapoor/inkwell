@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class ChangeService {
 
   constructor() { }
-  private changes: boolean = true
+  private changes: boolean = false
 
   setChangeStatus(status: boolean) {
     this.changes = status;
