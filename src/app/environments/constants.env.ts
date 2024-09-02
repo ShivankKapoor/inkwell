@@ -1,4 +1,4 @@
 export const constants = {
-    enforceRoutingGuard: false,
-    downloadOnExit:false  
+    enforceRoutingGuard: true,
+    downloadOnExit:true  
 };

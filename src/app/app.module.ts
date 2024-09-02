@@ -19,7 +19,7 @@ import { EntryPickerComponent } from './components/entry-picker/entry-picker.com
 import { FormsModule } from '@angular/forms';
 import { ReaderPageComponent } from './pages/reader-page/reader-page.component';
 import { ReaderPickerComponent } from './components/reader-picker/reader-picker.component';
-
+import {MatSnackBar, MatSnackBarModule} from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -46,7 +46,8 @@ import { ReaderPickerComponent } from './components/reader-picker/reader-picker.
     MatDatepickerModule,
     MatNativeDateModule,
     FormsModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSnackBarModule
   ],
   providers: [
     provideAnimationsAsync()

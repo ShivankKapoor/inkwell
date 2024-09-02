@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterService } from '../../services/router/router.service';
 import { FileService } from '../../services/file-service/file.service';
+import { SnackbarService } from '../../services/snackbar-service/snackbar.service';
+import { ChangeService } from '../../services/change-service/change.service';
 
 @Component({
   selector: 'app-writer-page',
@@ -14,10 +16,11 @@ export class WriterPageComponent {
   outputString: string | undefined;
   isEnabled: boolean = false;
 
-  constructor(public route: RouterService, private fileService: FileService) { }
+  constructor(public route: RouterService, private fileService: FileService, private snack:SnackbarService, private change:ChangeService) { }
 
   clearText() {
     this.textContent = '';
+    this.snack.openSnackBar("Entry is cleared","Close");
   }
 
   onDateSelected(date: Date | undefined): void {
@@ -71,11 +74,13 @@ export class WriterPageComponent {
   }
 
   saveEntry(): void {
+    this.change.setChangeStatus(true);
     if (this.selectedDate && this.textContent) {
       this.fileService.writeEntry(this.selectedDate.toDateString(), this.textContent);
     }
 
     console.log(this.fileService.getEntriesMap());
     console.log(this.fileService.getFileContent());
+    this.snack.openSnackBar("Entry has been saved","Close");
   }
 }
